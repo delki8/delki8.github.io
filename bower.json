@@ -17,11 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "iron-elements": "PolymerElements/iron-elements#~1.0.3",
-    "paper-elements": "PolymerElements/paper-elements#~1.0.4",
-    "more-routing": "Polymore/more-routing#~1.0.0",
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5",
+    "google-map": "~1.0.5",
     "google-maps": "~3.1.0",
-    "google-map": "~1.0.5"
+    "iron-elements": "PolymerElements/iron-elements#~1.0.3",
+    "more-routing": "Polymore/more-routing#~1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.4",
+    "polymer": "Polymer/polymer#^1.0.0"
   }
 }
