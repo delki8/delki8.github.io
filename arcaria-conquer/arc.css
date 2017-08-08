@@ -1,0 +1,74 @@
+.flex-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  justify-content: space-between;
+}
+
+.territory {
+  box-sizing: border-box;
+  flex-basis: 30%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+  margin: auto;
+}
+
+span {
+  padding: 5px;
+  flex: 1;
+  margin: auto;
+}
+
+span.contador {
+  font-size: 80px;
+}
+
+#conquistas {
+    display: flex;
+}
+
+div.nome {
+  display: flex;
+}
+
+div.utania {
+  background-color: #c58832;
+}
+
+div.fharum {
+  background-color: #bca95f;
+}
+
+div.jaura {
+  background-color: #e3b55a;
+}
+
+div.thariem {
+  background-color: #818420;
+}
+
+div.plomo {
+  background-color: #cb8042;
+}
+
+div.niar {
+  background-color: #6f8b7e;
+}
+
+div.galetros {
+  background-color: #809d91;
+}
+
+div.sudor {
+  background-color: #ae532c;
+}
+
+div.arigoth {
+  background-color: #636e5e;
+}

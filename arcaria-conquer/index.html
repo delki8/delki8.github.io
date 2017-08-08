@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Arcaria Conquer</title>
+
+    <link rel="stylesheet" href="arc.css" />
+    <script src="arc.js"></script>
+  </head>
+
+  <body>
+    <button class="btn-clear" onclick="clearBtnCounter();">
+      limpar
+    </button>
+    <div class="flex-container">
+      <div class="territory Utania" onclick="increment('btnUtania');">
+        <label>I Utânia</label>
+        <span id="btnUtania" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Fharum" onclick="increment('btnFharum');">
+        <label>II Fhárum</label>
+        <span id="btnFharum" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Jaura" onclick="increment('btnJaura');">
+        <label>III Jaura</label>
+        <span id="btnJaura" onclick="increment(this);" class="contador">0</span>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="territory Thariem" onclick="increment('btnThariem');">
+        <label>IV Tháriem</label>
+        <span id="btnThariem" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Plomo" onclick="increment('btnPlomo');">
+        <label>V Plomo</label>
+        <span id="btnPlomo" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Niar" onclick="increment('btnNiar');">
+        <label>VI Niar</label>
+        <span id="btnNiar" onclick="increment(this);" class="contador">0</span>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="territory Galetros" onclick="increment('btnGaletros');">
+        <label>VII Galétros</label>
+        <span id="btnGaletros" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Sudor" onclick="increment('btnSudor');">
+        <label>VIII Sudor</label>
+        <span id="btnSudor" onclick="increment(this);" class="contador">0</span>
+      </div>
+      <div class="territory Arigoth" onclick="increment('btnArigoth');">
+        <label>IX Arigoth</label>
+        <span id="btnArigoth" onclick="increment(this);" class="contador">0</span>
+      </div>
+    </div>
+
+    <div id="conquistas">
+
+    </div>
+  </body>
+</html>
