@@ -11,12 +11,19 @@
   min-height: 100px;
   display: flex;
   flex-direction: column;
+  padding: 5px;
 }
 
 label {
   font-weight: bold;
   font-size: 20px;
   margin: auto;
+}
+
+@media screen and (max-width: 680px) {
+  label {
+    font-size: 14px;
+  }
 }
 
 span {
