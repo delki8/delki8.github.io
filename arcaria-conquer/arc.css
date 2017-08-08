@@ -29,6 +29,15 @@ span.contador {
   font-size: 80px;
 }
 
+.clear {
+  display: flex;
+}
+
+.clearBtn {
+  flex: 1;
+  height: 60px;
+}
+
 #conquistas {
     display: flex;
 }
