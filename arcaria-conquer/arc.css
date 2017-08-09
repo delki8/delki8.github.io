@@ -36,6 +36,11 @@ span.contador {
   font-size: 80px;
 }
 
+ul {
+  background-color: lightgray;
+  margin: 5px;
+}
+
 .clear {
   display: flex;
 }

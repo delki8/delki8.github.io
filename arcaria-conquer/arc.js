@@ -53,8 +53,7 @@ function clearBtnCounter() {
   computarLancamentos();
 }
 
-function computarLancamentos() {
-
+function concatenarAcertos() {
   let acertosJogador = '';
   for (ter of territories) {
     let qtd = parseInt(document.getElementById('btn'+ter.nomeSimples).innerHTML);
@@ -62,29 +61,13 @@ function computarLancamentos() {
       acertosJogador = acertosJogador.concat(ter.abreviacao);
     }
   }
-
-  const conquistas = document.getElementById("conquistas");
-  conquistas.innerHTML = '';
-
-  let acertosCopiados = acertosJogador.concat('');
-  for (ter of territories) {
-    if (ter.conquistou(acertosCopiados)) {
-      addTerritory(conquistas, ter.nome);
-    }
-  }
-
+  return acertosJogador;
 }
 
-function addTerritory(conquistas, name) {
-  const span = document.createElement('span');
-  span.innerHTML = name;
-  conquistas.appendChild(span);
-}
-
-function computarLancamentosMultiplos() {
+function computarLancamentos() {
   let todasOpcoes = [];
-  const acertosIniciais = 'UUFJ';
-  let acertosEu = 'UUFJ';
+  const acertosIniciais = concatenarAcertos();
+  let acertosEu = acertosIniciais.concat('');
   let opcoes;
   let territoriosParaComputar = territories.slice();
 
@@ -104,14 +87,35 @@ function computarLancamentosMultiplos() {
     territoriosParaComputar.push(first);
     acertosEu = acertosIniciais;
 
+
     if (opcoes.length) {
-      todasOpcoes.push(opcoes)
+      let todasOpcoesComMesmoTamanho = todasOpcoes.filter(function(o) {
+        return o.length == opcoes.length;
+      });
+      let opcaoJaExiste = false;
+      for (const opcaoMesmoTamanho of todasOpcoesComMesmoTamanho) {
+        if (opcoes.every(function (e) { return opcaoMesmoTamanho.indexOf(e) > -1; })) {
+          opcaoJaExiste = true;
+        }
+      }
+      const opcaoAindaNaoFoiAdicionada = !todasOpcoesComMesmoTamanho.length || !opcaoJaExiste;
+      if (opcaoAindaNaoFoiAdicionada) {
+        todasOpcoes.push(opcoes)
+      }
     }
 
   } while (territoriosParaComputar[0].nomeSimples != 'Utania');
 
-  for (op of todasOpcoes) {
-    console.log(op);
+  const conquistas = document.getElementById("conquistas");
+  conquistas.innerHTML = '';
+  for (opcao of todasOpcoes) {
+    const ul = document.createElement('ul');
+    for (territorio of opcao) {
+        const li = document.createElement('li');
+        li.innerHTML = territorio.nome;
+        ul.appendChild(li);
+    }
+    conquistas.appendChild(ul);
   }
 }
 
