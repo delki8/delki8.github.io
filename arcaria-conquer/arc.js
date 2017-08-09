@@ -80,3 +80,62 @@ function addTerritory(conquistas, name) {
   span.innerHTML = name;
   conquistas.appendChild(span);
 }
+
+function computarLancamentosMultiplos() {
+  let todasOpcoes = [];
+  const acertosIniciais = 'UUFJ';
+  let acertosEu = 'UUFJ';
+  let opcoes;
+  let territoriosParaComputar = territories.slice();
+
+  do {
+    opcoes = [];
+
+    for (ter of territoriosParaComputar) {
+      if (ter.conquistou(acertosEu)) {
+        for (const territorioNecessario of ter.regraConquista) {
+          acertosEu = acertosEu.removeFirstMatch(territorioNecessario);
+        }
+        opcoes.push(ter);
+      }
+    }
+
+    let first = territoriosParaComputar.shift();
+    territoriosParaComputar.push(first);
+    acertosEu = acertosIniciais;
+
+    if (opcoes.length) {
+      todasOpcoes.push(opcoes)
+    }
+
+  } while (territoriosParaComputar[0].nomeSimples != 'Utania');
+
+  for (op of todasOpcoes) {
+    console.log(op);
+  }
+}
+
+// remove first occurrence of a letter from a string
+String.prototype.removeFirstMatch = function(char) {
+    for (var i = 0; i < this.length; i++) {
+        if (this.charAt(i) == char) {
+          return this.slice(0, i) + this.slice(i + 1, this.length);
+        }
+    }
+    return this;
+}
+
+function arraysEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+  a.sort();
+  b.sort();
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
