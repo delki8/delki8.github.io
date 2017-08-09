@@ -1,3 +1,7 @@
+body {
+  background-image: url('img/back.jpg');
+}
+
 .flex-container {
   display: flex;
   max-width: 1400px;
@@ -12,6 +16,20 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
+  background-repeat: no-repeat;
+  /*background-color: whitesmoke;*/
+  background-size: contain;
+}
+
+button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 label {
@@ -23,6 +41,9 @@ label {
 @media screen and (max-width: 680px) {
   label {
     font-size: 14px;
+  }
+  span {
+    /*color: red;*/
   }
 }
 
@@ -37,7 +58,8 @@ span.contador {
 }
 
 ul {
-  background-color: lightgreen;
+  background-color: whitesmoke;
+  color: #555555;
   margin: auto;
   margin-left: 5px;
   margin-top: 5px;
@@ -51,6 +73,7 @@ ul {
 .clearBtn {
   flex: 1;
   height: 60px;
+  margin-bottom: auto;
 }
 
 #conquistas {
@@ -63,37 +86,46 @@ div.nome {
 }
 
 div.utania {
-  background-color: #c58832;
+  background-image: url('img/Utania.png');
+  /*background-color: #c58832;*/
 }
 
 div.fharum {
-  background-color: #bca95f;
+  background-image: url('img/Fharum.png');
+  /*background-color: #bca95f;*/
 }
 
 div.jaura {
-  background-color: #e3b55a;
+  background-image: url('img/Jaura.png');
+  /*background-color: #e3b55a;*/
 }
 
 div.thariem {
-  background-color: #818420;
+  background-image: url('img/Thariem.png');
+  /*background-color: #818420;*/
 }
 
 div.plomo {
-  background-color: #cb8042;
+  background-image: url('img/Plomo.png');
+  /*background-color: #cb8042;*/
 }
 
 div.niar {
-  background-color: #6f8b7e;
+  background-image: url('img/Niar.png');
+  /*background-color: #6f8b7e;*/
 }
 
 div.galetros {
-  background-color: #809d91;
+  background-image: url('img/Galetros.png');
+  /*background-color: #809d91;*/
 }
 
 div.sudor {
-  background-color: #ae532c;
+  background-image: url('img/Sudor.png');
+  /*background-color: #ae532c;*/
 }
 
 div.arigoth {
-  background-color: #636e5e;
+  background-image: url('img/Arigoth.png');
+  /*background-color: #636e5e;*/
 }

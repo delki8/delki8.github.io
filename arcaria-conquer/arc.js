@@ -148,7 +148,7 @@ function computarLancamentos() {
       delay = setTimeout(check, longpress);
 
       function check() {
-        _this.childNodes[3].innerHTML = -1;
+        _this.childNodes[1].innerHTML = -1;
       }
 
     }, true);
