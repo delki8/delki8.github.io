@@ -37,8 +37,11 @@ span.contador {
 }
 
 ul {
-  background-color: lightgray;
-  margin: 5px;
+  background-color: lightgreen;
+  margin: auto;
+  margin-left: 5px;
+  margin-top: 5px;
+  flex: 1;
 }
 
 .clear {
@@ -51,7 +54,8 @@ ul {
 }
 
 #conquistas {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 div.nome {
