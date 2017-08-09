@@ -1,3 +1,13 @@
+// remove first occurrence of a letter from a string
+String.prototype.removeFirstMatch = function(char) {
+    for (var i = 0; i < this.length; i++) {
+        if (this.charAt(i) == char) {
+          return this.slice(0, i) + this.slice(i + 1, this.length);
+        }
+    }
+    return this;
+}
+
 class Territory {
 
   constructor(nome, abreviacao, nomeSimples, regraConquista, cor) {
@@ -119,27 +129,39 @@ function computarLancamentos() {
   }
 }
 
-// remove first occurrence of a letter from a string
-String.prototype.removeFirstMatch = function(char) {
-    for (var i = 0; i < this.length; i++) {
-        if (this.charAt(i) == char) {
-          return this.slice(0, i) + this.slice(i + 1, this.length);
-        }
-    }
-    return this;
-}
+(function () {
 
-function arraysEqual(a, b) {
-  if (a === b) return true;
-  if (a == null || b == null) return false;
-  if (a.length != b.length) return false;
+  // Create variable for setTimeout
+  let delay;
 
-  // If you don't care about the order of the elements inside
-  // the array, you should sort both arrays here.
-  a.sort();
-  b.sort();
-  for (var i = 0; i < a.length; ++i) {
-    if (a[i] !== b[i]) return false;
+  // Set number of milliseconds for longpress
+  let longpress = 700;
+
+  let listItems = document.getElementsByClassName('territory');
+  let listItem;
+
+  for (let i = 0, j = listItems.length; i < j; i++) {
+    listItem = listItems[i];
+
+    listItem.addEventListener('mousedown', function (e) {
+      let _this = this;
+      delay = setTimeout(check, longpress);
+
+      function check() {
+        _this.childNodes[3].innerHTML = -1;
+      }
+
+    }, true);
+
+    listItem.addEventListener('mouseup', function (e) {
+      // On mouse up, we know it is no longer a longpress
+      clearTimeout(delay);
+    });
+
+    listItem.addEventListener('mouseout', function (e) {
+      clearTimeout(delay);
+    });
+
   }
-  return true;
-}
+
+}());
